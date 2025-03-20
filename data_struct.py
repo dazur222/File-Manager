@@ -9,6 +9,8 @@ class Txt_Reader:
             file.seek(0)
             for line in file:
                 self.txt_arr.append(line.strip())
+        
+        #papu comentario
 
     def __str__(self):
         return(str(self.txt))

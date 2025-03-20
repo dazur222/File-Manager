@@ -56,7 +56,7 @@ class Txt_Reader:
 
         return contador 
     
-
+# HOLA SOY UNA PERRA PROGRAMADORA 
 
                     
 

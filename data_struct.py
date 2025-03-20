@@ -1,3 +1,4 @@
+# Erm, what da sigma???
 import os
 
 class Txt_Reader:

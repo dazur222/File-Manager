@@ -1,3 +1,4 @@
+# Erm, what da sigma???
 import os
 
 class Txt_Reader:
@@ -57,8 +58,14 @@ class Txt_Reader:
 
         return contador 
     
-
-
+    #Funcion para el nuevvo foldr
+    def create_folder(self,foldername): 
+        if not os.path.exists(foldername): 
+            os.makedirs(foldername) 
+            return True
+        else:
+            return False
+        
                     
 
 file_name = "Example txt for Data Structures.txt"

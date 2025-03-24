@@ -10,6 +10,8 @@ class Txt_Reader:
             file.seek(0)
             for line in file:
                 self.txt_arr.append(line.strip())
+        
+        #papu comentario
 
     def __str__(self):
         return(str(self.txt))
@@ -56,8 +58,14 @@ class Txt_Reader:
 
         return contador 
     
-
-
+    #Funcion para el nuevvo foldr
+    def create_folder(self,foldername): 
+        if not os.path.exists(foldername): 
+            os.makedirs(foldername) 
+            return True
+        else:
+            return False
+        
                     
 
 file_name = "Example txt for Data Structures.txt"

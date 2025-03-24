@@ -1,0 +1,7 @@
+header,
+footer {
+    background-color: rgb(9, 75, 129);
+    color: white;
+    text-align: center;
+    padding: .5em;
+}

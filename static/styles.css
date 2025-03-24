@@ -1,7 +1,25 @@
-header,
-footer {
+header {
     background-color: rgb(9, 75, 129);
     color: white;
     text-align: center;
     padding: .5em;
+}
+
+/* This makes the footer stay at the bottom cuh */
+body.flex-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.content {
+    flex: 1;
+}
+
+.footer {
+    background-color: rgb(9, 75, 129);
+    text-align: center;
+    padding: 10px;
+    color: white;
 }

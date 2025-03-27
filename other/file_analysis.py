@@ -68,7 +68,7 @@ class Txt_Reader:
         
                     
 
-file_name = "Example txt for Data Structures.txt"
+file_name = "ejemplo.txt"
 #Cargar nombre del txt
 txt_reader = Txt_Reader(file_name)
 

@@ -11,27 +11,110 @@
 <body class="flex-container">
     <header>
         <h1>File Organizer</h1>
+        <a href="/">Refresh</a>
+
     </header>
 
     <main class="content">
-        <section>
-            <h2>Create folder/file</h2>
+        <div class="main-container">
+            <div class="left-content">
 
-        </section>
+                <section class="searchFiles">
+                    <h2>Files</h2>
+                    <form action="/search">
+                        <label for="searchquery">Search:</label>
+                        <input type="text" id="search-files" name="files" placeholder="Search files or folders"
+                            required>
+                        <button type="submit">Search</button>
+                    </form>
+                </section>
 
-        <section>
-            <h2>Upload a file</h2>
-        </section>
+                <section class="overWrite">
+                    <h2>Overwrite a file</h2>
+                    <form action="/overWrite">
+                        <label for="overwrite">Overwrite:</label>
+                        <input type="text" id="overwrite" name="overwrite" placeholder="Enter file name to overwrite"
+                            required>
+                        <br>
+                        <label for="newtext">New input:</label>
+                        <input type="text" id="overwrite-input" name="overwrite-input" placeholder="New text" required>
+                        <button type="submit">Overwrite</button>
+                    </form>
+                </section>
 
-        <section>
-            <h2>Files</h2>
-            <form id="search-form" method="GET" action="">
-                <label for="search-query">Search:</label>
-                <input type="text" id="search-files" name="files" placeholder="Search files or folders" required>
-                <button type="submit">Search</button>
-            </form>
-        </section>
+                <section class="removeContent">
+                    <h2>Remove Content in file</h2>
+                    <form action="/remove">
+                        <label for="remove">Remove:</label>
+                        <input type="text" id="remove" name="remove" placeholder="Enter file name to remove content"
+                            required>
+                        <button type="submit">Remove</button>
+                    </form>
+                </section>
 
+                <section class="countWord">
+                    <h2>Count word in particular</h2>
+                    <form action="/count">
+                        <label for="counting">Count:</label>
+                        <input type="text" id="count" name="file-count" placeholder="Enter file name" required>
+                        <input type="text" id="count-input" name="count-input" placeholder="Enter word to count"
+                            required>
+                        <button type="submit">Count</button>
+                    </form>
+                </section>
+
+                <section class="countLines">
+                    <h2>Count Lines in File</h2>
+                    <form action="/countLines">
+                        <label for="countLines">File for line counting:</label>
+                        <input type="text" name="CountLines" placeholder="Enter file name to count Lines" required>
+                        <button type="submit">Count Lines</button>
+                    </form>
+                </section>
+
+                <section class="countWords">
+                    <h2>Words counter in File</h2>
+                    <form action="/countWords">
+                        <label for="countwords">File for counting words:</label>
+                        <input type="text" name="CountWords" placeholder="Enter file name to count words" required>
+                        <button type="submit">Count Words</button>
+                    </form>
+                </section>
+
+                <section class="ordenar">
+                    <h2>Orden Alfabetico</h2>
+                    <form action="/ordenar">
+                        <label for="orden">File for orden:</label>
+                        <input type="text" name="order" placeholder="Enter file name to orden" required>
+                        <button type="submit">Order File</button>
+                    </form>
+                </section>
+
+                <section class="unicas">
+                    <h2>Unique words</h2>
+                    <form action="/unicas">
+                        <label for="unicas">File of usage:</label>
+                        <input type="text" name="unicas" placeholder="Enter file name to get unique words" required>
+                        <button type="submit">Get Unique Words</button>
+                    </form>
+                </section>
+
+                <section class="longest">
+                    <h2>Longest Word in File</h2>
+                    <form action="/longest">
+                        <label for="longest">File for longest word:</label>
+                        <input type="text" name="longest" placeholder="Enter file name to get longest word" required>
+                        <button type="submit">Get Longest Word</button>
+                    </form>
+                </section>
+
+            </div>
+            <div class="right-content">
+                <h2>Results</h2>
+                <h3>{{ result }}</h3>
+                <h4>{{ counter }}</h4>
+            </div>
+        </div>
     </main>
 
     <footer class="footer">

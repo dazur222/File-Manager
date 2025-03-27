@@ -4,8 +4,33 @@ def read_file(archivo):
             return file.read()
     except FileNotFoundError: 
         print("El archivo no existe")
-    return None 
+    return None
 
+
+def write_file(archivo,contenido_txt):
+    try: 
+        with open(archivo, 'a') as file: 
+            file.write(contenido_txt)
+    except Exception as e:
+        print(f"Error al escribir en el archivo: {e}")
+    return None
+
+# Aqui lo quite con sobrescribir el archivo con una cadena vacía -Kevin
+def remove_text(archivo):
+    try:
+        with open(archivo, 'w') as file:
+            file.write("")
+    except Exception as e:
+        print(f"Error al eliminar el contenido del archivo: {e}")
+    return None
+    
+
+# imprimire el TXT 
+def imprimir_txt(archivo):
+    data = read_file(archivo)
+    return data
+
+    
 
 def count_palabra(palabra, archivo):
     contenido = read_file(archivo)
@@ -83,9 +108,59 @@ def ordenAlfabetico(archivo):
     return palabras
 
 
+
+def count_palabras_total(archivo):
+    contenido = read_file(archivo)
+    if contenido is None:
+        print(f"El archivo '{archivo}' NO NO NO")
+        return None 
+    palabras = contenido.split()  # dividimos el contenido en palabras
+    # print(palabras)
+    # print(len(palabras))
+    return len(palabras)  # devolvemos la cantidad de palabras
+
+
+
+def palabras_unicas(archivo):
+    contenido = read_file(archivo)
+    if contenido is None:
+        print(f"El archivo '{archivo}' NO NO NO")
+        return None
+    
+    palabras = contenido.split()
+    frecuencia = {} # diccionario donde las keys son las palabras y los valores son las frecuencias
+
+    for palabra in palabras:
+        frecuencia[palabra] = frecuencia.get(palabra, 0) + 1
+    
+    unicas = [palabra for palabra, conteo in frecuencia.items() if conteo == 1]
+    
+    return unicas
+
+def palabra_mas_larga(archivo):
+    contenido = read_file(archivo)
+    if contenido is None:
+        print(f"El archivo '{archivo}' NO NO NO")
+        return None
+    
+    palabras = contenido.split()
+    if not palabras:
+        
+        return None
+    
+    return max(palabras, key=len)
+
+
+
 file = "ejemplo.txt"
 
 print("VECES",count_palabra("hola",file))
 print("R",count_renglones(file))
 print("TP",count_palabras(file))
 print("intimidad",ordenAlfabetico(file))
+print("total",count_palabras_total(file))
+print( "unicas",palabras_unicas(file))
+print("mas larga: (la mia)",palabra_mas_larga(file))
+#print(imprimir_txt(file))
+
+print(write_file(file, "chupapi"))
